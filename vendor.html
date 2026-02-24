@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendor Management | AquaFlow Pro</title>
+    <!-- Professional Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="Vendor.css">
+</head>
+<body>
+
+    <!-- Professional Software Header -->
+    <header class="top-bar">
+        <div class="header-logo">
+            <div class="logo-circle"><i class="fas fa-droplet"></i></div>
+            <div class="logo-text">
+                <h1>Drinking Water 💧</h1>
+                <p>Inventory Software Pro</p>
+            </div>
+        </div>
+        
+        <nav class="software-nav">
+            <a href="produ.html" class="nav-item"><span>Dashboard 📊</span></a>
+            <a href="Prod.html" class="nav-item"><span>Products 📦</span></a>
+            <a href="cust.html" class="nav-item"><span>Customers 👥</span></a>
+            <a href="Vendor.html" class="nav-item active"><span>Vendor 🚛</span></a>
+            <a href="Staff.html" class="nav-item"><span>Employee 👤</span></a>
+            <a href="Reports.html" class="nav-item"><span>Reports 📑</span></a>
+            <a href="purch.html" class="nav-item"><span>Transaction 💳</span></a>
+            <a href="Settings.html" class="nav-item"><span>Setting ⚙️</span></a>
+        </nav>
+
+        <div class="window-controls">
+            <button id="theme-toggle" title="Switch Theme"><i class="fas fa-moon"></i></button>
+            <i class="fas fa-rectangle-xmark close-btn" onclick="location.href='produ.html'"></i>
+        </div>
+    </header>
+
+    <div class="user-strip">
+        <span><b>User:</b> Tahir Qureshi 👤</span>
+    </div>
+
+    <!-- Main Workspace -->
+    <main class="workspace">
+        <div class="page-header">
+            <h2 class="module-title">NEW VENDOR 🏭</h2>
+            <!-- Search Section Linked to Output -->
+            <div class="search-section">
+                <label>Search By Vendor ID Or Name</label>
+                <div class="search-group">
+                    <input type="text" id="vSearchInput" placeholder="e.g. shehzad">
+                    <button class="btn-red-search" onclick="searchVendors()">Search</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-grid">
+            <!-- LEFT: Vendor Form -->
+            <section class="form-pane">
+                <div class="group-box">
+                    <span class="group-label">Vendor Account</span>
+                    <form id="vendorForm">
+                        <div class="input-set">
+                            <label>Open Account Date:</label>
+                            <input type="date" id="vDate" required>
+                        </div>
+                        <div class="input-set">
+                            <label>Vendor Name</label>
+                            <input type="text" id="vName" placeholder="Enter full name" required>
+                        </div>
+                        <div class="input-set">
+                            <label>Contact #</label>
+                            <div class="phone-row">
+                                <span>+92</span>
+                                <input type="text" id="vPhone" placeholder="31234567">
+                            </div>
+                        </div>
+                        <div class="input-set">
+                            <label>Address</label>
+                            <input type="text" id="vAddress" placeholder="e.g. Karachi">
+                        </div>
+                        <div class="input-set">
+                            <label>Remarks</label>
+                            <input type="text" id="vRemarks">
+                        </div>
+                        <div class="input-set">
+                            <label>Opening Balance</label>
+                            <!-- Highlighted Yellow input from image -->
+                            <input type="number" id="vBalance" class="qty-yellow" value="0">
+                        </div>
+
+                        <div class="form-btns">
+                            <button type="submit" class="btn-blue-dark">New Vendor</button>
+                            <button type="button" class="btn-blue-dark" onclick="editMode()">Edit</button>
+                            <button type="button" class="btn-red" onclick="location.reload()">Refresh</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <!-- RIGHT: Output Table (The Sheet) -->
+            <section class="table-pane">
+                <div class="table-card">
+                    <div class="table-scroll">
+                        <table id="vendorTable">
+                            <thead>
+                                <tr>
+                                    <th>SNO</th>
+                                    <th>Acc#</th>
+                                    <th>Open Date</th>
+                                    <th>Vendor Name</th>
+                                    <th>Address</th>
+                                    <th>Contact</th>
+                                    <th>Open Balance</th>
+                                </tr>
+                            </thead>
+                            <tbody id="vendorTableBody">
+                                <!-- Data will load here automatically -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    
+
+    <!-- Professional Status Bar -->
+    <footer class="status-bar">
+        <div class="status-left">Copyright all rights reserved by <b>SOFTWEBPK</b></div>
+        <div class="status-center">App Code: <b>RG-Demo</b></div>
+        <div class="status-right">Help Line: <b>0092-315-1150070</b> 📞</div>
+    </footer>
+
+    <script src="Vendor.js"></script>
+</body>
+</html>
